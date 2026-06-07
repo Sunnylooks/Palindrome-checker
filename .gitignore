@@ -1,5 +1,6 @@
 # Internal project docs
 guide.md
+.opencode/
 
 # Python
 __pycache__/
