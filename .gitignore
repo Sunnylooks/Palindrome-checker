@@ -1,7 +1,7 @@
 # Internal project docs
 guide.md
 .opencode/
-
+flow.md
 # Python
 __pycache__/
 *.py[cod]

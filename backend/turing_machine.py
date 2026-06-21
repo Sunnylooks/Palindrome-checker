@@ -72,11 +72,13 @@ class MesinTuringPalindrome:
                     self.geser_kanan()
 
             elif self.state == "q1":
-                if simbol != BLANK:
-                    self.rekam_snapshot("Bergerak ke kanan menuju ujung tape")
+                if simbol != BLANK and simbol != MARK:
+                    self.rekam_snapshot("Bergerak ke kanan mencari batas (blank / X)")
                     self.geser_kanan()
                 else:
-                    self.rekam_snapshot("Blank kanan ditemukan, mundur satu langkah")
+                    self.rekam_snapshot(
+                        "Batas kanan ditemukan, mundur satu langkah"
+                    )
                     self.state = "q2"
                     self.geser_kiri()
 
@@ -112,12 +114,12 @@ class MesinTuringPalindrome:
                     return False
 
             elif self.state == "q3":
-                if simbol != BLANK:
-                    self.rekam_snapshot("Kembali ke sisi kiri tape")
+                if simbol != BLANK and simbol != MARK:
+                    self.rekam_snapshot("Kembali ke sisi kiri mencari batas (blank / X)")
                     self.geser_kiri()
                 else:
                     self.rekam_snapshot(
-                        "Blank kiri ditemukan, lanjut ke pasangan berikutnya"
+                        "Batas kiri ditemukan, lanjut ke pasangan berikutnya"
                     )
                     self.state = "q0"
                     self.geser_kanan()

@@ -19,8 +19,8 @@ export default function InputBar({ value, onChange, onSubmit, loading }: InputBa
         value={value}
         onChange={(e) => onChange(e.target.value)}
         onKeyDown={handleKeyDown}
-        maxLength={30}
-        placeholder="Ketik kata atau kalimat..."
+        maxLength={50}
+        placeholder="Ketik kata / kalimat..."
         disabled={loading}
         spellCheck={false}
         className="w-full bg-transparent text-base text-ray-text placeholder-ray-muted
